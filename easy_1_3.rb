@@ -1,16 +1,7 @@
 def digit_list(number)
-  digits = []
-  loop do
-    number, remainder = number.divmod(10)
-    digits.unshift(remainder)
-    break if number == 0
-  end
-  digits
-end
-
-def digit_list_idiomatic(number)
-  number.to_s.chars.map(&:to_i)
+  number_string = number.to_s
+  number_array = number_string.split('')
+  number_array.map {|s| s.to_i}
 end
 
 p digit_list(12345)
-p digit_list_idiomatic(12345)
